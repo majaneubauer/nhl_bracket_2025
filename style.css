@@ -4,32 +4,32 @@ body {
     margin: 0;
     padding: 20px;
     text-align: center;
-  }
-  
-  h1 {
+}
+
+h1 {
     margin-bottom: 30px;
-  }
-  
-  #bracket-container {
+}
+
+#bracket-container {
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
     overflow-x: auto;
-  }
-  
-  .round {
+}
+
+.round {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     margin: 0 10px;
     min-width: 150px;
-  }
-  
-  .matchup {
+}
+
+.matchup {
     margin: 20px 0;
-  }
-  
-  button {
+}
+
+button {
     display: block;
     width: 100%;
     padding: 10px;
@@ -39,30 +39,57 @@ body {
     background: white;
     cursor: pointer;
     margin-bottom: 10px;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background-color: #f0f8ff;
-  }
-  
-  button.selected {
+}
+
+button.selected {
     background-color: #007BFF;
     color: white;
-  }
-  
-  .team {
+}
+
+.team {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     padding: 10px;
     font-size: 16px;
     background-color: #f9f9f9;
     border: 2px solid #ccc;
     border-radius: 4px;
-  }
-  
-  .winner-spot {
+}
+
+.team img {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+}
+
+
+/* Make the winner of each round green */
+.team.winner {
+    background-color: #28a745; /* Green background for the winner */
+    color: white; /* White text for contrast */
+    border: 2px solid #1e7e34; /* Darker green border */
+}
+
+.winner-spot {
     padding: 10px;
     font-size: 16px;
     background-color: #eaeaea;
     border: 2px dashed #bbb;
     margin-bottom: 10px;
-  }
-  
+}
+
+#champion-display {
+    margin: 60px auto 0 auto;
+    padding: 20px 40px;
+    background-color: #d4edda;
+    border: 2px solid #28a745;
+    border-radius: 8px;
+    display: inline-block;
+    text-align: center;
+}
+
