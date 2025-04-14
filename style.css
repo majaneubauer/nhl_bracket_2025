@@ -1,8 +1,8 @@
 body {
-    font-family: sans-serif;
-    background: #f4f4f4;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
+    background-color: #f4f4f4;
     text-align: center;
   }
   
@@ -10,7 +10,7 @@ body {
     margin-bottom: 30px;
   }
   
-  .bracket-container {
+  #tournament {
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
@@ -18,46 +18,70 @@ body {
   }
   
   .round {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin: 0 10px;
-    min-width: 120px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 20px;
   }
   
-  .matchup {
-    background: white;
+  .game {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
     padding: 10px;
-    margin: 20px 0;
+    margin: 5px 0;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0,0,0,0.2);
   }
   
-  button {
-    display: block;
-    width: 100%;
-    margin: 5px 0;
-    padding: 8px;
-    font-size: 14px;
-    border: 2px solid #007BFF;
-    border-radius: 4px;
-    background: white;
-    cursor: pointer;
+  .game-top, .game-bottom {
+    width: 45%;
+    text-align: center;
   }
   
-  button:hover {
+  button.team {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    background: #fff;
+    border: 2px solid #007BFF;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  button.team:hover {
     background-color: #f0f8ff;
   }
   
-  button.selected {
+  button.team.selected {
     background-color: #007BFF;
     color: white;
   }
   
-  .placeholder {
-    margin: 40px 0;
-    height: 60px;
-    border: 2px dashed #ccc;
-    border-radius: 6px;
+  .spacer {
+    height: 20px;
+  }
+  
+  .score {
+    font-size: 14px;
+    color: #007BFF;
+    padding-left: 10px;
+    font-weight: bold;
+  }
+  
+  .round-1 .game { /* Specific styles for round 1 */
+    background-color: #e9f6ff;
+  }
+  
+  .round-2 .game { /* Specific styles for round 2 */
+    background-color: #bde1ff;
+  }
+  
+  .round-3 .game { /* Specific styles for round 3 */
+    background-color: #99c3ff;
+  }
+  
+  .round-4 .game { /* Specific styles for the finals */
+    background-color: #6699ff;
   }
   

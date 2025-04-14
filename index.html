@@ -8,43 +8,55 @@
 </head>
 <body>
   <h1>2025 NHL Playoff Bracket</h1>
-  <div class="bracket-container">
-    <!-- East Side -->
-    <div class="round round-1">
-      <div class="matchup"><button>Toronto</button><button>Ottawa</button></div>
-      <div class="matchup"><button>Tampa Bay</button><button>Florida</button></div>
-      <div class="matchup"><button>Washington</button><button>New Jersey</button></div>
-      <div class="matchup"><button>Carolina</button><button>Montreal</button></div>
-    </div>
-    <div class="round round-2">
-      <div class="placeholder"></div>
-      <div class="placeholder"></div>
-    </div>
-    <div class="round conference-finals">
-      <div class="placeholder"></div>
-    </div>
+  <main id="tournament">
+    
+    <!-- Round 1 -->
+    <ul class="round round-1">
+      <li class="game game-top">
+        <button class="team">Toronto</button> <span class="score">0</span>
+      </li>
+      <li class="game game-bottom">
+        <button class="team">Ottawa</button> <span class="score">0</span>
+      </li>
+      <li class="spacer">&nbsp;</li>
+      <!-- More matchups for Round 1 -->
+    </ul>
 
-    <!-- Center (Finals) -->
-    <div class="round finals">
-      <div class="placeholder"></div>
-    </div>
+    <!-- Round 2 -->
+    <ul class="round round-2">
+      <li class="game game-top">
+        <button class="team">Winner 1</button> <span class="score">0</span>
+      </li>
+      <li class="game game-bottom">
+        <button class="team">Winner 2</button> <span class="score">0</span>
+      </li>
+      <li class="spacer">&nbsp;</li>
+      <!-- More matchups for Round 2 -->
+    </ul>
 
-    <!-- West Side -->
-    <div class="round conference-finals">
-      <div class="placeholder"></div>
-    </div>
-    <div class="round round-2">
-      <div class="placeholder"></div>
-      <div class="placeholder"></div>
-    </div>
-    <div class="round round-1">
-      <div class="matchup"><button>Winnipeg</button><button>St. Louis</button></div>
-      <div class="matchup"><button>Dallas</button><button>Colorado</button></div>
-      <div class="matchup"><button>Vegas</button><button>Minnesota</button></div>
-      <div class="matchup"><button>Edmonton</button><button>Los Angeles</button></div>
-    </div>
-  </div>
+    <!-- Round 3 (Conference Finals) -->
+    <ul class="round round-3">
+      <li class="game game-top">
+        <button class="team">Winner 3</button> <span class="score">0</span>
+      </li>
+      <li class="game game-bottom">
+        <button class="team">Winner 4</button> <span class="score">0</span>
+      </li>
+      <li class="spacer">&nbsp;</li>
+    </ul>
 
+    <!-- Round 4 (Finals) -->
+    <ul class="round round-4">
+      <li class="game game-top">
+        <button class="team">Winner 5</button> <span class="score">0</span>
+      </li>
+      <li class="game game-bottom">
+        <button class="team">Winner 6</button> <span class="score">0</span>
+      </li>
+      <li class="spacer">&nbsp;</li>
+    </ul>
+
+  </main>
   <script src="script.js"></script>
 </body>
 </html>
