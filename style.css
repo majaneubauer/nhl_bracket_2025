@@ -52,8 +52,9 @@ button.selected {
 
 .team {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    align-items: center;  /* Vertically center the items inside the flex container */
+    justify-content: center;  /* Horizontally center the items */
+    gap: 2.5px;
     padding: 10px;
     font-size: 16px;
     background-color: #f9f9f9;
@@ -68,24 +69,28 @@ button.selected {
 }
 
 
-/* Make the winner of each round green */
-.team.winner {
-    background-color: #28a745; /* Green background for the winner */
-    color: white; /* White text for contrast */
-    border: 2px solid #1e7e34; /* Darker green border */
-}
 
-.winner-spot {
+/* Ensure that the winner spots in round 2 also look nice and fit logos */
+.team.winner-spot {
+    display: flex;
+    align-items: center;  /* Vertically center the items inside the flex container */
+    justify-content: center;  /* Horizontally center the items */
     padding: 10px;
     font-size: 16px;
-    background-color: #eaeaea;
-    border: 2px dashed #bbb;
+    background-color: #f9f9f9;
+    border: 2px dashed #ccc;
     margin-bottom: 10px;
+}
+
+.team.winner-spot img {
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
 }
 
 #champion-display {
     margin: 60px auto 0 auto;
-    padding: 20px 40px;
+    padding: 10px 20px;
     background-color: #d4edda;
     border: 2px solid #28a745;
     border-radius: 8px;
@@ -93,3 +98,57 @@ button.selected {
     text-align: center;
 }
 
+/* Base styling for all rounds (including Rounds 2-4) */
+.team {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer; /* Makes the team clickable */
+  }
+  
+  /* Hover effect for all rounds */
+  .team:hover {
+    background-color: #007BFF; /* Blue background on hover */
+    color: white; /* White text on hover */
+    border-color: #0056b3; /* Darker border on hover */
+  }
+  
+  /* Round 1 specific styling for button hover */
+  button.team:hover {
+    background-color: #f0f8ff; /* Lighter blue background for round 1 */
+    color: #007BFF; /* Change text color to blue on hover */
+  }
+  
+  /* For round 2 and beyond, we want to highlight winners on hover as well */
+  .matchup[data-round="2"] .team:hover,
+  .matchup[data-round="3"] .team:hover,
+  .matchup[data-round="4"] .team:hover {
+    background-color: #00c853; /* Green background on hover (for Rounds 2-4) */
+    color: white; /* White text on hover */
+    border-color: #1b5e20; /* Darker green border */
+  }
+  
+  /* Round 1 hover effect specific to buttons */
+  button:hover {
+    background-color: #f0f8ff;
+  }
+  
+  /* Keep the images and text centered inside the team divs */
+  .team-logo-only {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ccc;
+  }
+  
+  /* For the team text */
+  .team-name {
+    font-size: 16px;
+  }
