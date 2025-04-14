@@ -8,49 +8,43 @@
 </head>
 <body>
   <h1>2025 NHL Playoff Bracket</h1>
-  <div class="bracket">
-    <!-- Eastern Conference -->
-    <div class="conference">
-      <h2>Eastern Conference</h2>
-      <div class="matchup">
-        <button>Toronto Maple Leafs</button>
-        <button>Ottawa Senators</button>
-      </div>
-      <div class="matchup">
-        <button>Tampa Bay Lightning</button>
-        <button>Florida Panthers</button>
-      </div>
-      <div class="matchup">
-        <button>Washington Capitals</button>
-        <button>New Jersey Devils</button>
-      </div>
-      <div class="matchup">
-        <button>Carolina Hurricanes</button>
-        <button>Montreal Canadiens</button>
-      </div>
+  <div class="bracket-container">
+    <!-- East Side -->
+    <div class="round round-1">
+      <div class="matchup"><button>Toronto</button><button>Ottawa</button></div>
+      <div class="matchup"><button>Tampa Bay</button><button>Florida</button></div>
+      <div class="matchup"><button>Washington</button><button>New Jersey</button></div>
+      <div class="matchup"><button>Carolina</button><button>Montreal</button></div>
+    </div>
+    <div class="round round-2">
+      <div class="placeholder"></div>
+      <div class="placeholder"></div>
+    </div>
+    <div class="round conference-finals">
+      <div class="placeholder"></div>
     </div>
 
-    <!-- Western Conference -->
-    <div class="conference">
-      <h2>Western Conference</h2>
-      <div class="matchup">
-        <button>Winnipeg Jets</button>
-        <button>St. Louis Blues</button>
-      </div>
-      <div class="matchup">
-        <button>Dallas Stars</button>
-        <button>Colorado Avalanche</button>
-      </div>
-      <div class="matchup">
-        <button>Vegas Golden Knights</button>
-        <button>Minnesota Wild</button>
-      </div>
-      <div class="matchup">
-        <button>Edmonton Oilers</button>
-        <button>Los Angeles Kings</button>
-      </div>
+    <!-- Center (Finals) -->
+    <div class="round finals">
+      <div class="placeholder"></div>
+    </div>
+
+    <!-- West Side -->
+    <div class="round conference-finals">
+      <div class="placeholder"></div>
+    </div>
+    <div class="round round-2">
+      <div class="placeholder"></div>
+      <div class="placeholder"></div>
+    </div>
+    <div class="round round-1">
+      <div class="matchup"><button>Winnipeg</button><button>St. Louis</button></div>
+      <div class="matchup"><button>Dallas</button><button>Colorado</button></div>
+      <div class="matchup"><button>Vegas</button><button>Minnesota</button></div>
+      <div class="matchup"><button>Edmonton</button><button>Los Angeles</button></div>
     </div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
