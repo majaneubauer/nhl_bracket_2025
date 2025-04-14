@@ -8,55 +8,46 @@
 </head>
 <body>
   <h1>2025 NHL Playoff Bracket</h1>
-  <main id="tournament">
-    
-    <!-- Round 1 -->
-    <ul class="round round-1">
-      <li class="game game-top">
-        <button class="team">Toronto</button> <span class="score">0</span>
-      </li>
-      <li class="game game-bottom">
-        <button class="team">Ottawa</button> <span class="score">0</span>
-      </li>
-      <li class="spacer">&nbsp;</li>
-      <!-- More matchups for Round 1 -->
-    </ul>
+  <div id="bracket-container">
+    <!-- East Side -->
+    <div class="round round-1">
+      <div class="matchup" data-round="1" data-game="1">
+        <button class="team">Toronto</button>
+        <button class="team">Ottawa</button>
+      </div>
+      <div class="matchup" data-round="1" data-game="2">
+        <button class="team">Tampa Bay</button>
+        <button class="team">Florida</button>
+      </div>
+    </div>
 
-    <!-- Round 2 -->
-    <ul class="round round-2">
-      <li class="game game-top">
-        <button class="team">Winner 1</button> <span class="score">0</span>
-      </li>
-      <li class="game game-bottom">
-        <button class="team">Winner 2</button> <span class="score">0</span>
-      </li>
-      <li class="spacer">&nbsp;</li>
-      <!-- More matchups for Round 2 -->
-    </ul>
+    <div class="round round-2">
+      <div class="matchup" data-round="2" data-game="1">
+        <div class="team winner-spot">Winner 1</div>
+        <div class="team winner-spot">Winner 2</div>
+      </div>
+    </div>
 
-    <!-- Round 3 (Conference Finals) -->
-    <ul class="round round-3">
-      <li class="game game-top">
-        <button class="team">Winner 3</button> <span class="score">0</span>
-      </li>
-      <li class="game game-bottom">
-        <button class="team">Winner 4</button> <span class="score">0</span>
-      </li>
-      <li class="spacer">&nbsp;</li>
-    </ul>
+    <!-- West Side -->
+    <div class="round round-1">
+      <div class="matchup" data-round="1" data-game="3">
+        <button class="team">Winnipeg</button>
+        <button class="team">St. Louis</button>
+      </div>
+      <div class="matchup" data-round="1" data-game="4">
+        <button class="team">Dallas</button>
+        <button class="team">Colorado</button>
+      </div>
+    </div>
 
-    <!-- Round 4 (Finals) -->
-    <ul class="round round-4">
-      <li class="game game-top">
-        <button class="team">Winner 5</button> <span class="score">0</span>
-      </li>
-      <li class="game game-bottom">
-        <button class="team">Winner 6</button> <span class="score">0</span>
-      </li>
-      <li class="spacer">&nbsp;</li>
-    </ul>
+    <div class="round round-2">
+      <div class="matchup" data-round="2" data-game="2">
+        <div class="team winner-spot">Winner 3</div>
+        <div class="team winner-spot">Winner 4</div>
+      </div>
+    </div>
+  </div>
 
-  </main>
   <script src="script.js"></script>
 </body>
 </html>
