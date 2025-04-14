@@ -9,45 +9,97 @@
 <body>
   <h1>2025 NHL Playoff Bracket</h1>
   <div id="bracket-container">
-    <!-- East Side -->
-    <div class="round round-1">
-      <div class="matchup" data-round="1" data-game="1">
-        <button class="team">Toronto</button>
-        <button class="team">Ottawa</button>
-      </div>
-      <div class="matchup" data-round="1" data-game="2">
-        <button class="team">Tampa Bay</button>
-        <button class="team">Florida</button>
-      </div>
-    </div>
-
-    <div class="round round-2">
-      <div class="matchup" data-round="2" data-game="1">
-        <div class="team winner-spot">Winner 1</div>
-        <div class="team winner-spot">Winner 2</div>
-      </div>
-    </div>
-
     <!-- West Side -->
     <div class="round round-1">
-      <div class="matchup" data-round="1" data-game="3">
-        <button class="team">Winnipeg</button>
-        <button class="team">St. Louis</button>
-      </div>
-      <div class="matchup" data-round="1" data-game="4">
-        <button class="team">Dallas</button>
-        <button class="team">Colorado</button>
-      </div>
+        <div class="matchup" data-round="1" data-game="1">
+            <button class="team">Winnipeg Jets</button>
+            <button class="team">WC2</button>
+        </div>
+        <div class="matchup" data-round="1" data-game="2">
+            <button class="team">Dallas Stars</button>
+            <button class="team">Colorado Avalanche</button>
+        </div>
+        <div class="matchup" data-round="1" data-game="3">
+            <button class="team">Las Vegas Knights</button>
+            <button class="team">WC1</button>
+        </div>
+        <div class="matchup" data-round="1" data-game="4">
+            <button class="team">Los Angeles Kings</button>
+            <button class="team">Edmonton Oilers</button>
+        </div>
     </div>
 
     <div class="round round-2">
-      <div class="matchup" data-round="2" data-game="2">
-        <div class="team winner-spot">Winner 3</div>
-        <div class="team winner-spot">Winner 4</div>
-      </div>
+        <div class="matchup" data-round="2" data-game="1">
+            <div class="team winner-spot" data-slot="1"></div> <!-- from game 1 -->
+            <div class="team winner-spot" data-slot="2"></div> <!-- from game 2 -->
+        </div>
+        <div class="matchup" data-round="2" data-game="2">
+            <div class="team winner-spot" data-slot="3"></div> <!-- from game 3 -->
+            <div class="team winner-spot" data-slot="4"></div> <!-- from game 4 -->
+        </div>
     </div>
-  </div>
 
-  <script src="script.js"></script>
+    <div class="round round-3">
+        <!-- Western Conference Final -->
+        <div class="matchup" data-round="3" data-game="1">
+            <div class="team winner-spot" data-slot="9"></div> <!-- from slot 1 or 2 -->
+            <div class="team winner-spot" data-slot="10"></div> <!-- from slot 3 or 4 -->
+        </div>
+    </div>
+
+    <!-- Stanley Cup PLayoff Final -->
+
+    <div class="round round-4">
+        <div class="matchup" data-round="4" data-game="1">
+            <div class="team winner-spot" data-slot="13"></div> <!-- from slot 1 or 2 -->
+            <div class="team winner-spot" data-slot="14"></div> <!-- from slot 3 or 4 -->
+        </div>
+    </div>
+
+    <!-- East Side -->
+
+
+    <div class="round round-3">
+        <!-- Eastern Conference Final -->
+        <div class="matchup" data-round="3" data-game="2">
+            <div class="team winner-spot" data-slot="11"></div> <!-- from slot 5 or 6 -->
+            <div class="team winner-spot" data-slot="12"></div> <!-- from slot 7 or 8 -->
+        </div>
+    </div>
+
+
+    <div class="round round-2">
+        <div class="matchup" data-round="2" data-game="3">
+            <div class="team winner-spot" data-slot="5"></div> <!-- from game 1 -->
+            <div class="team winner-spot" data-slot="6"></div> <!-- from game 2 -->
+        </div>
+        <div class="matchup" data-round="2" data-game="4">
+            <div class="team winner-spot" data-slot="7"></div> <!-- from game 3 -->
+            <div class="team winner-spot" data-slot="8"></div> <!-- from game 4 -->
+        </div>
+    </div>
+
+    <!--  -->
+    <div class="round round-1">
+        <div class="matchup" data-round="1" data-game="5">
+            <button class="team">Toronto Maple Leafs</button>
+            <button class="team">Ottawa Senators</button>
+        </div>
+        <div class="matchup" data-round="1" data-game="6">
+            <button class="team">Tampa Bay Lightning</button>
+            <button class="team">Florida Panthers</button>
+        </div>
+        <div class="matchup" data-round="1" data-game="7">
+            <button class="team">Washington Capitals</button>
+            <button class="team">WC2</button>
+        </div>
+        <div class="matchup" data-round="1" data-game="8">
+            <button class="team">Carolina Hurricanes</button>
+            <button class="team">New Jersey Devils</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
