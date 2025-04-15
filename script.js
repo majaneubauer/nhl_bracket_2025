@@ -156,33 +156,27 @@ document.querySelectorAll('.matchup[data-round="3"]').forEach(matchup => {
         // Log the first team object to inspect the structure
         console.log('First team structure:', teams[0]);
   
-        // Loop through the teams to get the division sequence and points
+        // Loop through the teams to get the ranking and points
         teams.forEach((team) => {
-            // Log each team's structure for debugging
-            console.log('Team in loop:', team);
-  
-            // Safely extract division sequence and points
-            const divisionSequence = team.divisionSequence || "Unknown Division"; // If division sequence is undefined, fallback
-            const teamPoints = team.points || 0; // Safeguard for missing points
-            const divisionAbbrev = team.divisionAbbrev || "Unknown Division"
-  
-            // Query the team button based on team name
-            const teamName = team.teamName.default; // Assuming the team name is under 'teamName.default'
-            const teamElement = document.querySelector(`[data-name="${teamName}"]`);
-            
-            if (teamElement) {
-                // Create a container to hold the rank and points, below the team name
-                const rankContainer = document.createElement('div');
-                rankContainer.className = 'team-performance-container';
-                rankContainer.innerHTML = `
-                    <span class="team-performance">
-                        Rank: ${divisionAbbrev}${divisionSequence} | Points: ${teamPoints}
-                    </span>
-                `;
-                
-                // Append the rank container below the team name
-                teamElement.appendChild(rankContainer);
-            }
+          const teamName = team.teamName?.default || "Unknown Team";
+          const teamPoints = team.points || 0;
+          const divisionAbbrev = team.divisionAbbrev;
+          const divisionSequence = team.divisionSequence;
+
+          // Query the team button based on team name
+          const teamElement = document.querySelector(`[data-name="${teamName}"]`);
+          
+          if (teamElement) {
+              // Remove any existing performance info
+              const existing = teamElement.querySelector('.team-performance');
+              if (existing) existing.remove();
+
+              // Create and append the updated performance info
+              const rankElement = document.createElement('span');
+              rankElement.className = 'team-performance';
+              rankElement.innerText = `Standing: ${divisionAbbrev}${divisionSequence} | Points: ${teamPoints}`;
+              teamElement.appendChild(rankElement);
+          }
         });
     } catch (error) {
         console.error('Error fetching standings:', error);

@@ -94,7 +94,7 @@ button {
 }
 
 #champion-display {
-    margin-top: -130px;
+    margin-top: -250px;
     padding: 10px 20px;
     border: 2px solid #ccc;
     border-radius: 8px;
@@ -152,14 +152,10 @@ button[data-name] {
     text-align: center; /* Optional: Align the text to center */
 }
 
-/* Optional: Style the rank and points text */
-.team-performance {
-    font-weight: bold;
-}
-
 
 .team.senators {
-    background-color: #b79962;
+    background-color: #9c8355;
+    color: #ffffff;
 }
 
 .team.maple-leafs {
