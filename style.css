@@ -1,13 +1,34 @@
 body {
-    font-family: sans-serif;
-    background: #f4f4f4;
+    font-family: "CMU Sans Serif", sans-serif;
+    color: #ffffff;
+    background: #28455b;
     margin: 0;
     padding: 20px;
     text-align: center;
 }
 
+#user-name-section {
+    margin-bottom: 20px;
+}
+
+#user-name-section label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#user-name {
+    padding: 8px 0px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+    width: auto;
+}
+
+
+
 h1 {
-    margin-bottom: 30px;
+    margin-bottom: 0px;
 }
 
 #bracket-container {
@@ -34,30 +55,19 @@ button {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    border: 2px solid #007BFF;
     border-radius: 4px;
-    background: white;
     cursor: pointer;
     margin-bottom: 10px;
 }
 
-button:hover {
-    background-color: #f0f8ff;
-}
-
-button.selected {
-    background-color: #007BFF;
-    color: white;
-}
-
 .team {
+    font-family: "CMU Sans Serif", sans-serif;
     display: flex;
     align-items: center;  /* Vertically center the items inside the flex container */
     justify-content: center;  /* Horizontally center the items */
     gap: 2.5px;
     padding: 10px;
     font-size: 16px;
-    background-color: #f9f9f9;
     border: 2px solid #ccc;
     border-radius: 4px;
 }
@@ -67,8 +77,6 @@ button.selected {
     width: 60px;
     object-fit: contain;
 }
-
-
 
 /* Ensure that the winner spots in round 2 also look nice and fit logos */
 .team.winner-spot {
@@ -88,10 +96,9 @@ button.selected {
 }
 
 #champion-display {
-    margin: 60px auto 0 auto;
+    margin-top: -130px;
     padding: 10px 20px;
-    background-color: #d4edda;
-    border: 2px solid #28a745;
+    border: 2px solid #ccc;
     border-radius: 8px;
     display: inline-block;
     text-align: center;
@@ -108,52 +115,82 @@ button.selected {
     border: 2px solid #ccc;
     border-radius: 4px;
     cursor: pointer; /* Makes the team clickable */
-  }
-  
-  /* Hover effect for all rounds */
-  .team:hover {
-    background-color: #007BFF; /* Blue background on hover */
-    color: white; /* White text on hover */
-    border-color: #0056b3; /* Darker border on hover */
-  }
-  
-  /* Round 1 specific styling for button hover */
-  button.team:hover {
-    background-color: #f0f8ff; /* Lighter blue background for round 1 */
-    color: #007BFF; /* Change text color to blue on hover */
-  }
-  
-  /* For round 2 and beyond, we want to highlight winners on hover as well */
-  .matchup[data-round="2"] .team:hover,
-  .matchup[data-round="3"] .team:hover,
-  .matchup[data-round="4"] .team:hover {
-    background-color: #00c853; /* Green background on hover (for Rounds 2-4) */
-    border-color: #1b5e20; /* Darker green border */
-  }
-  
-  /* Round 1 hover effect specific to buttons */
-  button:hover {
-    background-color: #f0f8ff;
-  }
-  
-  /* Keep the images and text centered inside the team divs */
-  .team-logo-only {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #ccc;
-  }
-  
-  /* For the team text */
-  .team-name {
-    font-size: 16px;
-  }
+}
+
+/* Round 1 specific styling for button hover */
+button.team:hover {
+background-color: #f0f8ff; /* Lighter blue background for round 1 */
+color: #007BFF; /* Change text color to blue on hover */
+}
+
+/* For round 2 and beyond, we want to highlight winners on hover as well */
+.matchup[data-round="2"] .team:hover,
+.matchup[data-round="3"] .team:hover,
+.matchup[data-round="4"] .team:hover {
+background-color: #f0f8ff; /* Green background on hover (for Rounds 2-4) */
+color: #007BFF; /* Darker green border */
+}
 
 .team.senators {
-    background-color: #c62331;
+    background-color: #b79962;
 }
 
 .team.maple-leafs {
-    background-color: #304f85;
+    background-color: #0c1c58;
+    color: #ffffff;
+}
+
+.team.hurricanes {
+    background-color: #c62331;
+    color: #ffffff;
+}
+
+.team.knights {
+    background-color: #343f47;
+    color: #ffffff;
+}
+
+.team.devils {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.team.capitals {
+    background-color: #0a1c40;
+    color: #ffffff;
+}
+
+.team.panthers {
+    background-color: #c62331;
+    color: #ffffff;
+}
+
+.team.lightning {
+    background-color: #0c1c58;
+    color: #ffffff;
+}
+
+.team.kings {
+    background-color: #a2aaad;
+    color: #000000;
+}
+
+.team.oilers {
+    background-color: #cf4c2a;
+    color: #ffffff;
+}
+
+.team.avalanche {
+    background-color: #892933;
+    color: #ffffff;
+}
+
+.team.stars {
+    background-color: #008245;
+    color: #ffffff;
+}
+
+.team.jets {
+    background-color: #55565a;
+    color: #ffffff;
 }
