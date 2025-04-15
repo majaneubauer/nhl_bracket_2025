@@ -131,6 +131,35 @@ background-color: #f0f8ff; /* Green background on hover (for Rounds 2-4) */
 color: #007BFF; /* Darker green border */
 }
 
+.team-performance {
+    font-size: 12px;
+    color: #ffffff;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Ensure the team element or button has a vertical layout */
+button[data-name] {
+    display: flex;
+    flex-direction: column; /* Stack the contents vertically */
+    align-items: center; /* Center-align the items horizontally (optional) */
+    padding: 10px;
+}
+
+/* Optional: Add some margin for the rank and points to be spaced properly */
+.team-performance-container {
+    margin-top: 5px; /* A bit of space between the team name and rank/points */
+    font-size: 0.9rem; /* Make the text a bit smaller */
+    color: #555; /* Slightly gray color */
+    text-align: center; /* Optional: Align the text to center */
+}
+
+/* Optional: Style the rank and points text */
+.team-performance {
+    font-weight: bold;
+}
+
+
 .team.senators {
     background-color: #b79962;
 }
