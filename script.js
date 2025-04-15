@@ -164,6 +164,7 @@ document.querySelectorAll('.matchup[data-round="3"]').forEach(matchup => {
             // Safely extract division sequence and points
             const divisionSequence = team.divisionSequence || "Unknown Division"; // If division sequence is undefined, fallback
             const teamPoints = team.points || 0; // Safeguard for missing points
+            const divisionAbbrev = team.divisionAbbrev || "Unknown Division"
   
             // Query the team button based on team name
             const teamName = team.teamName.default; // Assuming the team name is under 'teamName.default'
@@ -175,7 +176,7 @@ document.querySelectorAll('.matchup[data-round="3"]').forEach(matchup => {
                 rankContainer.className = 'team-performance-container';
                 rankContainer.innerHTML = `
                     <span class="team-performance">
-                        Rank: ${divisionSequence} | Points: ${teamPoints}
+                        Rank: ${divisionAbbrev}${divisionSequence} | Points: ${teamPoints}
                     </span>
                 `;
                 
