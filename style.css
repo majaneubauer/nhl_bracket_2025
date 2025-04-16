@@ -36,6 +36,12 @@ h1 {
     overflow-x: auto;
 }
 
+.round-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .round {
     display: flex;
     flex-direction: column;
@@ -189,17 +195,17 @@ button[data-name] {
 }
 
 .team.lightning {
-    background-color: #0c1c58;
+    background-color: #0f2465;
     color: #ffffff;
 }
 
 .team.kings {
-    background-color: #a2aaad;
-    color: #000000;
+    background-color: #111111;
+    color: #ffffff;
 }
 
 .team.oilers {
-    background-color: #cf4c2a;
+    background-color: #0c1c58;
     color: #ffffff;
 }
 
@@ -217,3 +223,14 @@ button[data-name] {
     background-color: #55565a;
     color: #ffffff;
 }
+
+.team.blues {
+    background-color: #164682;
+    color: #ffffff;
+}
+
+.team.wild {
+    background-color: #0f4432;
+    color: #ffffff;
+}
+
