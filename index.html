@@ -19,7 +19,8 @@
             <button class="team jets" data-name="Winnipeg Jets" data-logo="logos/winnipeg-jets.svg">
                 <img src="logos/winnipeg-jets.svg" alt="Winnipeg Jets Logo" />
                 <span>Winnipeg Jets</span>
-            </button>              
+            </button>
+            <button class="analysis-btn" data-matchup="jets-vs-blues">Analysis</button>            
             <button class="team blues" data-name="St. Louis Blues" data-logo="logos/st-louis-blues.svg">
                 <img src="logos/st-louis-blues.svg" alt="St. Louis Blues Logo" />
                 <span>St. Louis Blues</span>
@@ -152,6 +153,14 @@
         </div>
     </div>
   </div>
+  <div id="analysis-popup" class="popup hidden">
+    <div class="popup-content">
+      <button id="close-popup"><span>&times;</span></button>
+      <h2 id="analysis-title">Title Here</h2>
+      <p id="analysis-body">Body text here.</p>
+      <div id="top-scorers-container"></div>
+    </div>
+  </div> 
   <div id="champion-display">
     <h2>Stanley Cup Champion:</h2>
     <div id="champion-name">TBD</div>
