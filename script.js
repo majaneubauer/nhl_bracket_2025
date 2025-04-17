@@ -190,7 +190,7 @@ async function fetchTopScorers(teams) {
     blues: 'STL',
     stars: 'DAL',
     avalanche: 'COL',
-    knight: 'VGK',
+    knights: 'VGK',
     wild: 'MIN',
     kings: 'LAK',
     oilers: 'EDM',
