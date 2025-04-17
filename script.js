@@ -159,14 +159,16 @@ const popupTitle = document.getElementById('analysis-title');
 const popupBody = document.getElementById('analysis-body');
 const closeBtn = document.getElementById('close-popup');
 
-
 analysisButtons.forEach(btn => {
   btn.addEventListener('click', async () => {
     popupTitle.textContent = "Matchup Analysis: Top Goal Scorers";
-    popupBody.textContent = ""; // Clear old text content if you’re not using it
+    popupBody.textContent = "";
 
-    // Load scorers and open popup
-    await fetchTopScorers();
+    const matchup = btn.getAttribute('data-matchup'); // e.g. 'jets-vs-blues'
+    const [team1, team2] = matchup.split('-vs-'); // ['jets', 'blues']
+    console.log('Matchup:', team1, team2);
+
+    await fetchTopScorers([team1, team2]);
 
     popup.classList.remove('hidden');
     popup.style.display = 'flex';
@@ -180,36 +182,74 @@ closeBtn.addEventListener('click', () => {
   document.body.classList.remove('popup-active');
 });
 
-async function fetchTopScorers() {
-  const apiUrl = 'https://cors-anywhere.herokuapp.com/https://api-web.nhle.com/v1/skater-stats-leaders/current?categories=goals';
+async function fetchTopScorers(teams) {
+  console.log('Requested teams:', teams);
+
+  const teamMap = {
+    jets: 'WPG',
+    blues: 'STL',
+    stars: 'DAL',
+    avalanche: 'COL',
+    knight: 'VGK',
+    wild: 'MIN',
+    kings: 'LAK',
+    oilers: 'EDM',
+    leafs: 'TOR',
+    senators: 'OTT',
+    lightning: 'TBL',
+    panthers: 'FLA',
+    capitals: 'WSH',
+    candiens: 'MTL',
+    hurricanes: 'CAR',
+    devils: 'NJD'
+    // Add more team mappings here
+  };
+
+  const abbrevs = teams.map(t => teamMap[t]);
+  console.log('Mapped abbreviations:', abbrevs);
+
+  const apiUrl = 'https://cors-anywhere.herokuapp.com/https://api-web.nhle.com/v1/skater-stats-leaders/current?categories=goals&limit=-1';
+
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
     const players = data.goals;
     const topScorers = {};
 
-    players.forEach(player => {
+    // Loop through sorted players, get first scorer for each matchup team
+    for (const player of players) {
       const teamAbbrev = player.teamAbbrev;
-      if (!topScorers[teamAbbrev]) {
+      const id = player.id;
+
+      if (abbrevs.includes(teamAbbrev) && !topScorers[teamAbbrev]) {
+        console.log('Adding scorer for:', teamAbbrev);
         topScorers[teamAbbrev] = {
+          id: id,
           playerName: `${player.firstName.default} ${player.lastName.default}`,
           goals: player.value,
           teamName: player.teamName.default,
           teamAbbrev: teamAbbrev,
-          teamLogo: `https://assets.nhle.com/logos/nhl/svg/${teamAbbrev}_light.svg`
+          headshot: `https://assets.nhle.com/mugs/nhl/20242025/${teamAbbrev}/${id}.png`
         };
       }
-    });
+
+      // Stop early if we’ve collected all needed
+      if (Object.keys(topScorers).length === abbrevs.length) break;
+    }
 
     const container = document.getElementById('top-scorers-container');
     container.innerHTML = '';
+
+    if (Object.keys(topScorers).length === 0) {
+      container.innerHTML = '<p>No top scorers found for this matchup.</p>';
+    }
 
     Object.values(topScorers).forEach(scorer => {
       const playerDiv = document.createElement('div');
       playerDiv.classList.add('scorer');
       playerDiv.innerHTML = `
         <div class="scorer-info">
-          <img src="${scorer.teamLogo}" alt="${scorer.teamName}" class="team-logo">
+          <img src="${scorer.headshot}" alt="${scorer.teamName}" class="team-logo">
           <div>
             <strong>${scorer.teamName} (${scorer.teamAbbrev})</strong><br>
             ${scorer.playerName} - <span class="goals">${scorer.goals} goals</span>
@@ -221,5 +261,8 @@ async function fetchTopScorers() {
 
   } catch (error) {
     console.error('Error fetching top scorers:', error);
+    const container = document.getElementById('top-scorers-container');
+    container.innerHTML = `<p class="error">Failed to load data. Try again later.</p>`;
   }
 }
+

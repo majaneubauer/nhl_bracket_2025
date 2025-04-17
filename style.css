@@ -226,13 +226,19 @@ button[data-name] {
     text-align: center; /* Optional: Align the text to center */
 }
 
+.team-performance {
+    display: block;
+    font-size: 0.75rem;
+    margin-top: 4px;
+}
+
 
 .team.senators {
     background-color: #9c8355;
     color: #ffffff;
 }
 
-.team.maple-leafs {
+.team.leafs {
     background-color: #0c1c58;
     color: #ffffff;
 }
