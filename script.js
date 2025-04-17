@@ -119,7 +119,7 @@ document.querySelectorAll('.matchup[data-round="4"]').forEach(matchup => {
 // TEAM RANKINGS FETCHING LOGIC
 // =============================
 async function fetchTeamRankings() {
-  const apiUrl = 'https://cors-anywhere.herokuapp.com/https://api-web.nhle.com/v1/standings/now';
+  const apiUrl = 'http://localhost:3000/api/standings';
   try {
     const response = await fetch(apiUrl);
     const data = await response.json();
