@@ -199,7 +199,7 @@ async function fetchTopScorers(teams) {
     lightning: 'TBL',
     panthers: 'FLA',
     capitals: 'WSH',
-    candiens: 'MTL',
+    canadiens: 'MTL',
     hurricanes: 'CAR',
     devils: 'NJD'
     // Add more team mappings here
